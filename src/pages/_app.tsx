@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
@@ -9,15 +9,23 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const [theme, setTheme] = useState('light')
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
   const toggleTheme = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
+    const selectedTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(selectedTheme);
+    localStorage.setItem('theme', selectedTheme);
   }
 
   return (
     <ThemeProvider theme={ theme == 'light' ? LightTheme : DarkTheme }>
       <GlobalStyle />
-      <Component {...pageProps} />
-      <button onClick={toggleTheme}>Switch Theme</button>
+      <Component {...pageProps} toggleTheme={toggleTheme} />
     </ThemeProvider>
   )
 }
