@@ -7,6 +7,10 @@ import GlobalStyle from '@/components/Global.styles'
 
 export default function App({ Component, pageProps }: AppProps) {
 
+  /**
+   * toggleTheme theme light/dark
+   */
+
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
@@ -22,10 +26,12 @@ export default function App({ Component, pageProps }: AppProps) {
     localStorage.setItem('theme', selectedTheme);
   }
 
+  /* ##END## toggleTheme theme light/dark */
+
   return (
     <ThemeProvider theme={ theme == 'light' ? LightTheme : DarkTheme }>
       <GlobalStyle />
-      <Component {...pageProps} toggleTheme={toggleTheme} />
+      <Component {...pageProps} toggleTheme={toggleTheme} theme={theme} />
     </ThemeProvider>
   )
 }

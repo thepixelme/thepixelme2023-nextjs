@@ -3,9 +3,10 @@ import SiteHeader from '@/components/SiteHeader/SiteHeader'
 
 type HomePageProps = {
   toggleTheme?: () => void;
+  theme: string;
 }
 
-export default function Home({ toggleTheme } : HomePageProps) {
+export default function Home({ toggleTheme, theme } : HomePageProps) {
   return (
     <>
       <Head>
@@ -15,7 +16,7 @@ export default function Home({ toggleTheme } : HomePageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SiteHeader toggleTheme={toggleTheme} />
+      <SiteHeader toggleTheme={toggleTheme} theme={theme} />
 
       <main>
       </main>

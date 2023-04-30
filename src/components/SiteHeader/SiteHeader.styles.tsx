@@ -4,6 +4,7 @@ import { Container, zindex } from '../Shared.styles'
 
 type SiteHeaderProps = {
   active?: boolean
+  currentTheme?: string;
 }
 
 /**
@@ -255,7 +256,43 @@ export const ActionButtons = styled.div`
   
 `
 
-export const ActionSwitchTheme = styled.button`
-  background-color: gray;
+export const ActionToggleTheme = styled.button<SiteHeaderProps>`
+  margin: 0;
+  padding: 4px 10px;
   border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1;
+
+  background-color: transparent;
+  color: ${({ theme }) => theme.brand1};;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.accent1};
+  }
+
+  ${props =>
+    props.currentTheme === 'light' && `
+      span:first-child {
+        display: block;
+        transform: scale(1.3);
+      }
+      span:last-child {
+        display: none;
+      }
+    `}
+
+  ${props =>
+    props.currentTheme === 'dark' && `
+      span:first-child {
+        display: none;
+      }
+      span:last-child {
+        display: block;
+      }
+    `}
 `

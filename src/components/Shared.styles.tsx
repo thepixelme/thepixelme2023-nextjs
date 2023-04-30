@@ -15,33 +15,46 @@ import { breakpoints } from "./Breakpoint.styles";
 const palette = {
   black: '#111111',
   white: '#ffffff',
+
   blackBlue: '#012439',
   blackBlueRGB: '1, 36, 57',
+
   darkBlue: '#083661',
   darkBlueRGB: '8, 54, 97',
+
   lightBlue: '#0284ea',
   lightBlueRGB: '2, 132, 234',
+
   paleBlue: '#ebf7ff',
+  paleBlueRGB: '235, 247, 255',
+
   paleBlue2: '#cae9ff',
   paleBlue2RGB: '202, 233, 255',
+
   teal: '#64f0ff',
 }
 
 export const LightTheme = {
   brand1: palette.darkBlue,
   brand1RGB: palette.darkBlueRGB,
+
   accent1: palette.lightBlue,
   accent1RGB: palette.lightBlueRGB,
+
   site1: palette.blackBlue,
+
   site2: palette.paleBlue,
-  site2RGB: palette.paleBlue2RGB,
+  site2RGB: palette.paleBlueRGB,
 }
 
 export const DarkTheme = {
   brand1: palette.paleBlue2,
   brand1RGB: palette.paleBlue2RGB,
+
   accent1: palette.teal,
+
   site1: palette.paleBlue,
+
   site2: palette.blackBlue,
   site2RGB: palette.blackBlueRGB,
 }

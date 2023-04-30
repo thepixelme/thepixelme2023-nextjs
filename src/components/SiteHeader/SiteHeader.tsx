@@ -1,17 +1,20 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import { HiMoon, HiSun } from "react-icons/hi2";
+
 import { 
   Header, HeaderContainer, 
   Branding, BrandLink, 
   Nav, NavTrigger, 
-  ActionButtons, ActionSwitchTheme
+  ActionButtons, ActionToggleTheme
 } from './SiteHeader.styles'
 
 type SiteHeaderProps = {
   toggleTheme?: () => void;
+  theme: string;
 }
 
-export default function SiteHeader({ toggleTheme } : SiteHeaderProps) {
+export default function SiteHeader({ toggleTheme, theme } : SiteHeaderProps) {
 
   const [navActive, setNavActive] = useState(false);
 
@@ -56,9 +59,13 @@ export default function SiteHeader({ toggleTheme } : SiteHeaderProps) {
         </Nav>
 
         <ActionButtons>
-          <ActionSwitchTheme onClick={toggleTheme}>
-            Switch
-          </ActionSwitchTheme>
+          <ActionToggleTheme 
+            onClick={toggleTheme}
+            currentTheme={theme}
+          >
+            <span> <HiSun /> </span>
+            <span> <HiMoon /> </span>
+          </ActionToggleTheme>
         </ActionButtons>
 
       </HeaderContainer>
