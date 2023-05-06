@@ -28,11 +28,15 @@ export const Header = styled.header`
 export const HeaderContainer = styled(Container)`
   position: relative;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  height: 50px;
+
+  @media ${breakpoints.medium} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 `
 
 /**
@@ -40,11 +44,21 @@ export const HeaderContainer = styled(Container)`
  */
 
 export const Branding = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 0 0 0 5px;
+
+  @media ${breakpoints.medium} {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    padding: 0;
+  }
 `
 
 export const BrandLink = styled.a`
@@ -57,6 +71,7 @@ export const BrandLink = styled.a`
 
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
   color: ${({ theme }) => theme.brand1};
   transition: all 0.3s ease-in-out;
 
@@ -83,20 +98,22 @@ export const BrandLink = styled.a`
 export const Nav = styled.nav<SiteHeaderProps>`
   position: absolute;
   top: 0;
-  right: ${props => props.active ? '0' : '-100%'};
+  left: ${props => props.active ? '0' : '-100%'};
+  z-index: ${zindex.offCanvas};
 
   display: block;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 40px);
   padding: 50px 0;
 
   background-color: ${({ theme }) => theme.site2};
   transition: all 0.3s ease-in-out;
 
   @media ${breakpoints.medium} {
-    position: relative;
-    top: auto;
-    right: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     width: auto;
     min-height: auto;
@@ -113,11 +130,6 @@ export const Nav = styled.nav<SiteHeaderProps>`
 
   li {
     display: block;
-    border-top: 1px solid ${({ theme }) => theme.brand1};
-
-    &:last-child {
-      border-bottom: 1px solid ${({ theme }) => theme.brand1};
-    }
 
     @media ${breakpoints.medium} {
       display: inline-block;
@@ -134,19 +146,17 @@ export const Nav = styled.nav<SiteHeaderProps>`
     position: relative;
 
     display: block;
-    padding: 15px 10px;
+    padding: 12px 15px;
 
-    font-size: 1rem; // 16px
-    font-weight: bold;
+    font-size: 0.875rem; // 14px
+    font-weight: 400;
     text-decoration: none;
     text-align: center;
     color: ${({ theme }) => theme.brand1};
-    background-color: ${({ theme }) => theme.site2};
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      color: ${({ theme }) => theme.site2};
-      background-color: ${({ theme }) => theme.brand1};
+      color: ${({ theme }) => theme.accent1};
     }
 
     &::before {
@@ -184,11 +194,15 @@ export const Nav = styled.nav<SiteHeaderProps>`
  */
 
 export const NavTrigger = styled.div<SiteHeaderProps>`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: ${zindex.offCanvas + 1};
 
   display: block;
   width: 24px;
-	height: 20px;
+	height: 16px;
   cursor: pointer;
 
   @media ${breakpoints.medium} {
@@ -201,37 +215,37 @@ export const NavTrigger = styled.div<SiteHeaderProps>`
 
     display: block;
 		width: 100%;
-    height: 3px;
+    height: 2px;
     border-radius: 3px;
 		opacity: 1;
     background-color: ${({ theme }) => theme.brand1};
 		
 		transform: rotate(0deg);
-		transform-origin: right center;
+		transform-origin: left center;
 		transition: all 0.3s ease-in-out;
 
     &:nth-child(1) {
       top: 0;
-      transform-origin: right center;
+      transform-origin: left center;
     }
 
     &:nth-child(2) {
       top: 7px;
-      right: 0;
-      left: auto;
-      transform-origin: left center;
+      right: auto;
+      left: 0;
+      transform-origin: right center;
     }
 
     &:nth-child(3) {
       top: 14px;
-      transform-origin: right center;
+      transform-origin: left center;
     }
   }
 
   ${props => props.active && `
     span {
       &:nth-child(1) {
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
       }
 
       &:nth-child(2) {
@@ -240,7 +254,7 @@ export const NavTrigger = styled.div<SiteHeaderProps>`
       }
 
       &:nth-child(3) {
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
         top: 17px;
       }
     }
@@ -253,12 +267,15 @@ export const NavTrigger = styled.div<SiteHeaderProps>`
  */
 
 export const ActionButtons = styled.div`
-  
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
 `
 
 export const ActionToggleTheme = styled.button<SiteHeaderProps>`
   margin: 0;
-  padding: 4px 10px;
+  padding: 4px 0 0 5px;
   border-radius: 8px;
   border: 0;
   cursor: pointer;
