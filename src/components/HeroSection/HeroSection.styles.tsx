@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { breakpoints } from '../Breakpoint.styles'
-import { Container, zindex } from '../Shared.styles'
+import { Container } from '../Shared.styles'
 
 /**
  * Hero

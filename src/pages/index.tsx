@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import SiteHeader from '@/components/SiteHeader/SiteHeader'
 import HeroSection from '@/components/HeroSection/HeroSection'
+import MyStackSection from '@/components/MyStackSection/MyStackSection'
 
 type HomePageProps = {
   toggleTheme?: () => void;
@@ -20,6 +21,7 @@ export default function Home({ toggleTheme, theme } : HomePageProps) {
       <SiteHeader toggleTheme={toggleTheme} theme={theme} />
 
       <HeroSection />
+      <MyStackSection />
 
       <main>
       </main>
