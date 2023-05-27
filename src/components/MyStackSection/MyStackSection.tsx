@@ -17,9 +17,9 @@ export default function MyStackSection() {
   // const header_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
   
   const card_opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
-  const card_y1 = useTransform(scrollYProgress, [0, 1], [-200, 0]);
+  const card_y1 = useTransform(scrollYProgress, [0, 1], [-220, 0]);
   const card_y2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
-  const card_y3 = useTransform(scrollYProgress, [0, 1], [-150, 0]);
+  const card_y3 = useTransform(scrollYProgress, [0, 1], [-180, 0]);
 
   const card_text_opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   /** ##End frame-motion */
