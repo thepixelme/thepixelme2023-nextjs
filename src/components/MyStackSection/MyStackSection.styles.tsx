@@ -49,13 +49,15 @@ export const StackCard = styled(motion.div)` // motion.div from framer-motion
   
 
   h3 {
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     font-size: 2.625rem;
     font-weight: bold;
   }
 
   p {
     margin: 0 0 20px 0;
+    border-top: 1px solid rgba( ${({ theme }) => theme.brand1RGB}, 0.1 );
+    padding-top: 20px;
 
     &:last-child {
       font-size: 0.875rem; /* 14px */
