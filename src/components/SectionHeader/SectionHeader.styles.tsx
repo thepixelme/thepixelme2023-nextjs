@@ -12,8 +12,9 @@ export const Heading = styled.h2`
   
   width: 100%;
   margin: 0 auto 20px auto;
-  opacity: 0.8;
+  opacity: 1;
   
   font-size: 200px;
   text-align: center;
+  color: ${({ theme }) => theme.brand1};
 `

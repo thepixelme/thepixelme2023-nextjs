@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { HiMoon, HiSun } from "react-icons/hi2";
+import { HiMoon, HiSun } from "react-icons/hi2"
 
 import { 
   Header, HeaderContainer, 

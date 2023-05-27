@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { breakpoints } from '../Breakpoint.styles'
 import { Container, zindex } from '../Shared.styles'
 
+import { motion } from 'framer-motion' // for scroll animation
+
 /**
  * Stack Section
  */
@@ -24,17 +26,16 @@ export const StackCardWrapper = styled.div`
   }
 `
 
-export const StackCard = styled.div`
+export const StackCard = styled(motion.div)` // motion.div from framer-motion
   width: 100%;
   min-height: auto;
   margin: 0 0 20px 0;
   padding: 20px;
   border-radius: 10px;
 
-  /* background-color: rgba( 255, 255, 255, 0.2 ); */
   background-color: rgba( ${({ theme }) => theme.brand1RGB}, 0.1 );
   backdrop-filter: blur(25px); 
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  -webkit-backdrop-filter: blur(25px); /* For Safari support */
 
   @media ${breakpoints.large} {
     width: 31%;

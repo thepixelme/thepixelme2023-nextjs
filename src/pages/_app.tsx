@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
    * toggleTheme theme light/dark
    */
 
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   const toggleTheme = () => {
-    const selectedTheme = theme === 'light' ? 'dark' : 'light';
+    const selectedTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(selectedTheme);
     localStorage.setItem('theme', selectedTheme);
   }
@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
   /* ##END## toggleTheme theme light/dark */
 
   return (
-    <ThemeProvider theme={ theme == 'light' ? LightTheme : DarkTheme }>
+    <ThemeProvider theme={ theme == 'dark' ? DarkTheme : LightTheme }>
       <GlobalStyle />
       <Component {...pageProps} toggleTheme={toggleTheme} theme={theme} />
     </ThemeProvider>

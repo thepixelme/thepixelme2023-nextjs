@@ -1,4 +1,6 @@
-import { HiCreditCard, HiCommandLine, HiChatBubbleLeftEllipsis } from "react-icons/hi2";
+import { useEffect } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { HiCreditCard, HiCommandLine, HiChatBubbleLeftEllipsis } from "react-icons/hi2"
 import SectionHeader from '../SectionHeader/SectionHeader'
 import { 
   StackWrapper, StackContainer,
@@ -7,48 +9,75 @@ import {
 
 export default function MyStackSection() {
 
+  /**
+   * framer-motion scroll animation
+   */
+  const { scrollYProgress } = useScroll();
+
+  // const header_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
+  
+  const card_opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const card_y1 = useTransform(scrollYProgress, [0, 1], [-200, 0]);
+  const card_y2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+  const card_y3 = useTransform(scrollYProgress, [0, 1], [-150, 0]);
+
+  const card_text_opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  /** ##End frame-motion */
+
+
   return (
     <StackWrapper>
-      <StackContainer>
-        {/* <SectionHeader text="What I Do" /> */}
 
-        <StackCardWrapper>
-          <StackCard>
-            <span><HiCreditCard /></span>
+        <StackContainer>
+          {/* <motion.div style={{ opacity:header_opacity }}>
+            <SectionHeader text="What I Do" />
+          </motion.div> */}
 
-            <h3>Front End</h3>
-            
-            <p>
-              I build what the users see and interact with on a website or app, ensuring that everything looks good across multiple devices.
-            </p>
+          <StackCardWrapper>
 
-            <p>HTML, CSS, SASS, Styled Component, NextJS, React, React Native</p>
-          </StackCard>
+            <StackCard style={{ opacity:card_opacity, y:card_y1 }}>
+              <span><HiCreditCard /></span>
 
-          <StackCard>
-            <span><HiCommandLine /></span>
+              <h3>Front End</h3>
+              
+              <motion.div style={{ opacity:card_text_opacity }}>
+                <p>
+                  I build what the users see and interact with on a website or app, ensuring that everything looks good across multiple devices.
+                </p>
 
-            <h3>Back End</h3>
+                <p>HTML, CSS, SASS, Styled Component, NextJS, React, React Native</p>
+              </motion.div>
+            </StackCard>
 
-            <p>
-              I work on the server-side parts of a website or app, handling the logics, databases, and overall functionality that power the front-end.
-            </p>
+            <StackCard style={{ opacity:card_opacity, y:card_y2 }}>
+              <span><HiCommandLine /></span>
 
-            <p>PHP, NodeJS, WordPress, Firebase, AWS Cognito, DynamoDB, Amplify, S3, CloudFront, AppSync, Lambda, LightSail</p>
-          </StackCard>
+              <h3>Back End</h3>
 
-          <StackCard>
-            <span><HiChatBubbleLeftEllipsis /></span>
+              <motion.div style={{ opacity:card_text_opacity }}>
+                <p>
+                  I work on the server-side parts of a website or app, handling the logics, databases, and overall functionality that power the front-end.
+                </p>
 
-            <h3>Consultation</h3>
+                <p>PHP, NodeJS, WordPress, Firebase, AWS Cognito, DynamoDB, Amplify, S3, CloudFront, AppSync, Lambda, LightSail</p>
+              </motion.div>
+            </StackCard>
 
-            <p>I help plan out the technology stack, identify potential issues, and offer appropriate solution for the given the time and budget.</p>
+            <StackCard style={{ opacity:card_opacity, y:card_y3 }}>
+              <span><HiChatBubbleLeftEllipsis /></span>
 
-            <p>Amazon Web Services, Google Cloud Platform, Auth0, CloudFlare</p>
-          </StackCard>
-        </StackCardWrapper>
+              <h3>Consultation</h3>
 
-      </StackContainer>
+              <motion.div style={{ opacity:card_text_opacity }}>
+                <p>I help plan out the technology stack, identify potential issues, and offer appropriate solution for the given time and budget.</p>
+
+                <p>Amazon Web Services, Google Cloud Platform, Auth0, CloudFlare</p>
+              </motion.div>
+            </StackCard>
+
+          </StackCardWrapper>
+
+        </StackContainer>
     </StackWrapper>
   )
 }
