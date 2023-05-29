@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiCreditCard, HiCommandLine, HiChatBubbleLeftEllipsis } from "react-icons/hi2"
 import SectionHeader from '../SectionHeader/SectionHeader'
@@ -9,7 +9,24 @@ import {
 
 export default function MyStackSection() {
   const ref = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
+  /**
+   * Check screen width
+   */
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1040);
+    };
+
+    // Set initial value
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  /** ##End screen width */
+  
   /**
    * framer-motion scroll animation
    */
@@ -19,14 +36,19 @@ export default function MyStackSection() {
     offset: ["start end", "end end"]
   })
 
-  // const header_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
-  
-  const card_opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
-  const card_y1 = useTransform(scrollYProgress, [0, 1], [-280, 0]);
-  const card_y2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
-  const card_y3 = useTransform(scrollYProgress, [0, 1], [-200, 0]);
+  // Always call hooks, but conditionally apply their results
+  const raw_card_opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+  const raw_card_y1 = useTransform(scrollYProgress, [0, 1], [-280, 0]);
+  const raw_card_y2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+  const raw_card_y3 = useTransform(scrollYProgress, [0, 1], [-200, 0]);
+  const raw_card_text_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
 
-  const card_text_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
+  const card_opacity = isDesktop ? raw_card_opacity : 1;
+  const card_y1 = isDesktop ? raw_card_y1 : 0;
+  const card_y2 = isDesktop ? raw_card_y2 : 0;
+  const card_y3 = isDesktop ? raw_card_y3 : 0;
+  const card_text_opacity = isDesktop ? raw_card_text_opacity : 1;
+
   /** ##End frame-motion */
 
 
@@ -34,9 +56,6 @@ export default function MyStackSection() {
     <StackWrapper ref={ref}>
 
         <StackContainer>
-          {/* <motion.div style={{ opacity:header_opacity }}>
-            <SectionHeader text="What I Do" />
-          </motion.div> */}
 
           <StackCardWrapper>
 

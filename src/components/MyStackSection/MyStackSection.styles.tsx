@@ -18,18 +18,25 @@ export const StackContainer = styled(Container)`
  * Stack Card
  */
 export const StackCardWrapper = styled.div`
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 
   @media ${breakpoints.large} {
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
     justify-content: space-between;
   }
 `
 
 export const StackCard = styled(motion.div)` // motion.div from framer-motion
   width: 100%;
+  max-width: 345px;
   min-height: auto;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
   padding: 20px;
   border-radius: 10px;
 
@@ -39,6 +46,7 @@ export const StackCard = styled(motion.div)` // motion.div from framer-motion
 
   @media ${breakpoints.large} {
     width: 31%;
+    max-width: 100%;
     margin: 0 1% 1% 0;
     padding: 40px;
   }
