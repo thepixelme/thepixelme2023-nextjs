@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiCreditCard, HiCommandLine, HiChatBubbleLeftEllipsis } from "react-icons/hi2"
 import SectionHeader from '../SectionHeader/SectionHeader'
@@ -8,25 +8,30 @@ import {
 } from './MyStackSection.styles'
 
 export default function MyStackSection() {
+  const ref = useRef(null);
 
   /**
    * framer-motion scroll animation
    */
-  const { scrollYProgress } = useScroll();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"]
+  })
 
   // const header_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
   
   const card_opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
-  const card_y1 = useTransform(scrollYProgress, [0, 1], [-220, 0]);
+  const card_y1 = useTransform(scrollYProgress, [0, 1], [-280, 0]);
   const card_y2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
-  const card_y3 = useTransform(scrollYProgress, [0, 1], [-180, 0]);
+  const card_y3 = useTransform(scrollYProgress, [0, 1], [-200, 0]);
 
-  const card_text_opacity = useTransform(scrollYProgress, [0.2, 1], [0, 1]);
+  const card_text_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
   /** ##End frame-motion */
 
 
   return (
-    <StackWrapper>
+    <StackWrapper ref={ref}>
 
         <StackContainer>
           {/* <motion.div style={{ opacity:header_opacity }}>
