@@ -7,7 +7,7 @@ import { Container } from '../Shared.styles'
  */
 export const Hero = styled.section`
   padding: 50px 0;
-  min-height: 80vh;
+  min-height: 90vh;
 
   display: flex;
   justify-content: center;

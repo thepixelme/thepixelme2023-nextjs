@@ -38,7 +38,7 @@ export default function MyStackSection() {
 
   // Always call hooks, but conditionally apply their results
   const raw_card_opacity = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
-  const raw_card_y1 = useTransform(scrollYProgress, [0, 1], [-280, 0]);
+  const raw_card_y1 = useTransform(scrollYProgress, [0, 1], [-300, 0]);
   const raw_card_y2 = useTransform(scrollYProgress, [0, 1], [-100, 0]);
   const raw_card_y3 = useTransform(scrollYProgress, [0, 1], [-200, 0]);
   const raw_card_text_opacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
