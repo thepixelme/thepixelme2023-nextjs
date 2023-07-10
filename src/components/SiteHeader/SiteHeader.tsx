@@ -22,11 +22,11 @@ export default function SiteHeader({ toggleTheme, theme } : SiteHeaderProps) {
     <Header>
       <HeaderContainer>
 
-        <NavTrigger active={navActive} onClick={ () => setNavActive( (prevNavActive) => !prevNavActive ) }>
+        {/* <NavTrigger active={navActive} onClick={ () => setNavActive( (prevNavActive) => !prevNavActive ) }>
           <span></span>
           <span></span>
           <span></span>
-        </NavTrigger>
+        </NavTrigger> */}
 
         <Branding>
           <Link href="/" passHref legacyBehavior>
@@ -38,12 +38,12 @@ export default function SiteHeader({ toggleTheme, theme } : SiteHeaderProps) {
           </Link>
         </Branding>
 
-        <Nav active={navActive}>
+        {/* <Nav active={navActive}>
           <ul>
             <li>
               <Link href="/about">About</Link>
             </li>
-            {/* <li>
+            <li>
               <Link href="/projects">Projects</Link>
             </li>
             <li>
@@ -51,12 +51,12 @@ export default function SiteHeader({ toggleTheme, theme } : SiteHeaderProps) {
             </li>
             <li>
               <Link href="/blog">Blog</Link>
-            </li> */}
+            </li>
             <li>
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
-        </Nav>
+        </Nav> */}
 
         <ActionButtons>
           <ActionToggleTheme 

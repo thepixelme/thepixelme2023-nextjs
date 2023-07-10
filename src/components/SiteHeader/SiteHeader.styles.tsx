@@ -46,10 +46,13 @@ export const HeaderContainer = styled(Container)`
 export const Branding = styled.div`
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
+  left: 15px;
+  transform: translateY(-50%);
 
-  padding: 0 0 0 5px;
+  /* padding: 0 0 0 5px; */
+  padding: 0;
 
   @media ${breakpoints.medium} {
     position: relative;

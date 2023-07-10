@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { breakpoints } from '../Breakpoint.styles'
 import { Container, zindex } from '../Shared.styles'
 
-export const Contact = styled.section`
-  padding: 100px 0;
+export const PortfolioTemporary = styled.section`
+  padding: 100px 0 50px 0;
 
   h2 {
     margin-bottom: 20px;
@@ -14,7 +14,7 @@ export const Contact = styled.section`
 /**
  * Container
  */
-export const ContactContainer = styled(Container)`
+export const PortfolioTemporaryContainer = styled(Container)`
   position: relative;
   width: 100%;
   max-width: 640px;

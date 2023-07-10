@@ -3,6 +3,7 @@ import SiteHeader from '@/components/SiteHeader/SiteHeader'
 import HeroSection from '@/components/HeroSection/HeroSection'
 import MyStackSection from '@/components/MyStackSection/MyStackSection'
 import PortfolioSection from '@/components/PortfolioSection/PortfolioSection'
+import PortfolioSectionTemporary from '@/components/PortfolioSectionTemporary/PortfolioSectionTemporary'
 import ContactSection from '@/components/ContactSection/ContactSection'
 
 type HomePageProps = {
@@ -26,6 +27,7 @@ export default function Home({ toggleTheme, theme } : HomePageProps) {
         <HeroSection />
         <MyStackSection />
         {/* <PortfolioSection /> */}
+        <PortfolioSectionTemporary />
         <ContactSection />
       </main>
     </>
