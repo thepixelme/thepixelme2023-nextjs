@@ -32,6 +32,7 @@ const palette = {
   paleBlue2RGB: '202, 233, 255',
 
   teal: '#64f0ff',
+  tealRGB: '100, 240, 255',
 }
 
 export const LightTheme = {
@@ -42,6 +43,7 @@ export const LightTheme = {
   accent1RGB: palette.lightBlueRGB,
 
   site1: palette.blackBlue,
+  site1RGB: palette.blackBlueRGB,
 
   site2: palette.paleBlue,
   site2RGB: palette.paleBlueRGB,
@@ -52,6 +54,7 @@ export const DarkTheme = {
   brand1RGB: palette.paleBlue2RGB,
 
   accent1: palette.teal,
+  accent1RGB: palette.tealRGB,
 
   site1: palette.paleBlue,
 
