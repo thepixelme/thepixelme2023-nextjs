@@ -43,7 +43,7 @@ export default function SiteHeader({ toggleTheme, theme } : SiteHeaderProps) {
             <li>
               <Link href="/about">About</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/projects">Projects</Link>
             </li>
             <li>
@@ -51,7 +51,7 @@ export default function SiteHeader({ toggleTheme, theme } : SiteHeaderProps) {
             </li>
             <li>
               <Link href="/blog">Blog</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/contact">Contact</Link>
             </li>

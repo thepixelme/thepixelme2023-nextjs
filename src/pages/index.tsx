@@ -24,7 +24,7 @@ export default function Home({ toggleTheme, theme } : HomePageProps) {
       <main>
         <HeroSection />
         <MyStackSection />
-        <PortfolioSection />
+        {/* <PortfolioSection /> */}
       </main>
     </>
   )

@@ -103,7 +103,7 @@ export const Nav = styled.nav<SiteHeaderProps>`
 
   display: block;
   width: 100%;
-  min-height: calc(100vh - 40px);
+  min-height: 100vh;
   padding: 50px 0;
 
   background-color: ${({ theme }) => theme.site2};
