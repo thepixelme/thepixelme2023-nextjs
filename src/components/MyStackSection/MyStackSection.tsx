@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiCreditCard, HiCommandLine, HiChatBubbleLeftEllipsis } from "react-icons/hi2"
-import SectionHeader from '../SectionHeader/SectionHeader'
 import { 
   StackWrapper, StackContainer,
   StackCardWrapper, StackCard
