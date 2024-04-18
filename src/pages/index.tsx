@@ -3,7 +3,6 @@ import SiteHeader from '@/components/SiteHeader/SiteHeader'
 import HeroSection from '@/components/HeroSection/HeroSection'
 import MyStackSection from '@/components/MyStackSection/MyStackSection'
 import PortfolioSection from '@/components/PortfolioSection/PortfolioSection'
-import PortfolioSectionTemporary from '@/components/PortfolioSectionTemporary/PortfolioSectionTemporary'
 import ContactSection from '@/components/ContactSection/ContactSection'
 import Script from 'next/script'
 
@@ -17,7 +16,7 @@ export default function Home({ toggleTheme, theme } : HomePageProps) {
     <>
       <Head>
         <title>Nhat, Web Developer & Consultant | ThePixelMe.com</title>
-        <meta name="description" content="Nhat Nguyen, Front-End Developer from the USA with over a decade of experience" />
+        <meta name="description" content="Nhat Nguyen, Front-End Developer from the USA, Earth, with over a decade of experience" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
