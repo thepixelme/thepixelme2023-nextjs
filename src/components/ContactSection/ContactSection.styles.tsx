@@ -3,7 +3,7 @@ import { breakpoints } from '../Breakpoint.styles'
 import { Container, zindex } from '../Shared.styles'
 
 export const Contact = styled.section`
-  padding: 100px 0;
+  padding: 100px  0 200px 0;
 
   h2 {
     margin-bottom: 20px;

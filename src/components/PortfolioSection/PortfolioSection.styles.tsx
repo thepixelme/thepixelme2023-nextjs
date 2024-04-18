@@ -8,7 +8,7 @@ import { motion } from 'framer-motion' // for scroll animation
  * Portfolio Section
  */
 export const PortfolioWrapper = styled.section`
-  padding: 300px 0;
+  padding: 300px 0 200px 0;
 `
 
 export const PortfolioContainer = styled(Container)`
@@ -24,6 +24,7 @@ export const Portfolio = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  margin-top: 80px;
 
   @media ${breakpoints.large} {
     display: flex;
