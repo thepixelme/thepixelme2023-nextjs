@@ -35,7 +35,7 @@ export const Portfolio = styled.div`
   }
 `
 
-export const PortfolioItem = styled.div`
+export const PortfolioItem = styled(motion.div)` // motion.div from framer-motion
   width: 100%;
   max-width: 345px;
   min-height: auto;

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiArrowUpRight } from "react-icons/hi2";
 import SectionHeader from '../SectionHeader/SectionHeader'
@@ -8,19 +8,54 @@ import {
 } from './PortfolioSection.styles'
 
 export default function PortfolioSection() {
+
+  const ref = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  /**
+   * Check screen width
+   */
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1040);
+    };
+
+    // Set initial value
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  /** ##End screen width */
+  
+  /**
+   * framer-motion scroll animation
+   */
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"]
+  })
+
+  // Always call hooks, but conditionally apply their results
+  const raw_card_y1 = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+  const card_y1 = isDesktop ? raw_card_y1 : 0;
+
+  /** ##End frame-motion */
+
   return (
     <PortfolioWrapper>
       <PortfolioContainer>
         <SectionHeader text="My Works" />
 
         <Portfolio>
-          <PortfolioItem>
+          <PortfolioItem style={{ y:card_y1 }}>
             <h3>Zoom Clone</h3>
             <p>Fully functional video conferencing web app, with secure real-time interactions, invitations, scheduling system, etc.</p>
             <a href="https://zoom-clone-2-indol.vercel.app/">Link <span><HiArrowUpRight /></span></a>
           </PortfolioItem>
 
-          <PortfolioItem>
+          <PortfolioItem style={{ y:card_y1 }}>
             <h3>Mobile Apps</h3>
             <p>Android and iOS mobile apps featuring live stream audio and video, on-demand podcasts, news, and of course, live score (when a game is live).</p>
             <a href="https://play.google.com/store/apps/details?id=com.bonneville.kslsports">Android <span><HiArrowUpRight /></span></a>
