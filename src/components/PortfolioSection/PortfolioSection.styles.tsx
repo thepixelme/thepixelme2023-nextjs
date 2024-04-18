@@ -8,7 +8,11 @@ import { motion } from 'framer-motion' // for scroll animation
  * Portfolio Section
  */
 export const PortfolioWrapper = styled.section`
-  padding: 300px 0 200px 0;
+  padding: 80px 0 80px 0;
+
+  @media ${breakpoints.large} {
+    padding: 300px 0 200px 0;
+  }
 `
 
 export const PortfolioContainer = styled(Container)`
