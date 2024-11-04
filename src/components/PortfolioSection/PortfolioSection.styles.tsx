@@ -32,7 +32,7 @@ export const Portfolio = styled.div`
 
   @media ${breakpoints.large} {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
@@ -48,13 +48,13 @@ export const PortfolioItem = styled(motion.div)` // motion.div from framer-motio
   border-radius: 10px;
 
   background-color: rgba( ${({ theme }) => theme.brand1RGB}, 0.1 );
-  backdrop-filter: blur(25px); 
+  backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px); /* For Safari support */
 
   @media ${breakpoints.large} {
     width: 48%;
     max-width: 100%;
-    margin: 0 1% 1% 0;
+    margin: 0 2% 2% 0;
     padding: 40px;
   }
 
@@ -92,7 +92,7 @@ export const PortfolioItem = styled(motion.div)` // motion.div from framer-motio
     left: 0;
     height: 1px;
     width: 100%;
-    background-color: ${({ theme }) => theme.site1};  
+    background-color: ${({ theme }) => theme.site1};
     transition: all 0.3s ease;
   }
 
@@ -102,7 +102,7 @@ export const PortfolioItem = styled(motion.div)` // motion.div from framer-motio
 
   a:hover::before {
     width: 0;
-    background-color: ${({ theme }) => theme.brand1};  
+    background-color: ${({ theme }) => theme.brand1};
   }
 
   a:hover span {

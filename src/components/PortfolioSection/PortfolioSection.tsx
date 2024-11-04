@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiArrowUpRight } from "react-icons/hi2";
 import SectionHeader from '../SectionHeader/SectionHeader'
-import { 
+import {
   PortfolioWrapper, PortfolioContainer,
   Portfolio, PortfolioItem
 } from './PortfolioSection.styles'
@@ -27,7 +27,7 @@ export default function PortfolioSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   /** ##End screen width */
-  
+
   /**
    * framer-motion scroll animation
    */
@@ -53,6 +53,20 @@ export default function PortfolioSection() {
             <h3>Zoom Clone</h3>
             <p>Fully functional video conferencing web app, with secure real-time interactions, invitations, scheduling system, etc.</p>
             <a href="https://zoom-clone-2-indol.vercel.app/">Link <span><HiArrowUpRight /></span></a>
+          </PortfolioItem>
+
+          <PortfolioItem style={{ y:card_y1 }}>
+            <h3>KSL News Sites</h3>
+            <p>High-traffic local news sites with millions of visits per month, with optimized delivery of all content types, including livestream media.</p>
+            <a href="https://kslsports.com/">KSLSports<span><HiArrowUpRight /></span></a>
+            <a href="https://kslnewsradio.com/">KSLNewsradio<span><HiArrowUpRight /></span></a>
+            <a href="https://ksltv.com/">KSLTV<span><HiArrowUpRight /></span></a>
+          </PortfolioItem>
+
+          <PortfolioItem style={{ y:card_y1 }}>
+            <h3>Degreed Blog</h3>
+            <p>Custom WordPress theme built from scratch for Degreed Blog.</p>
+            <a href="https://blog.degreed.com/">Degreed Blog<span><HiArrowUpRight /></span></a>
           </PortfolioItem>
 
           <PortfolioItem style={{ y:card_y1 }}>
