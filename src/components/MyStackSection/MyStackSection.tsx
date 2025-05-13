@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { HiCreditCard, HiCommandLine, HiChatBubbleLeftEllipsis } from "react-icons/hi2"
-import { 
+import {
   StackWrapper, StackContainer,
   StackCardWrapper, StackCard
 } from './MyStackSection.styles'
@@ -25,7 +25,7 @@ export default function MyStackSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   /** ##End screen width */
-  
+
   /**
    * framer-motion scroll animation
    */
@@ -59,20 +59,32 @@ export default function MyStackSection() {
           <StackCardWrapper>
 
             <StackCard style={{ opacity:card_opacity, y:card_y1 }}>
+              <span><HiChatBubbleLeftEllipsis /></span>
+
+              <h3>Business</h3>
+
+              <motion.div style={{ opacity:card_text_opacity }}>
+                <p>I lead teams focused on the What, Why, and How of developing and launching innovative products that effectively solve business challenges.</p>
+
+                <p>Product Strategy, Team Leadership, Business Analysis</p>
+              </motion.div>
+            </StackCard>
+
+            <StackCard style={{ opacity:card_opacity, y:card_y2 }}>
               <span><HiCreditCard /></span>
 
               <h3>Front End</h3>
-              
+
               <motion.div style={{ opacity:card_text_opacity }}>
                 <p>
                   I build what the users see and interact with on a website or app, ensuring that everything looks good across multiple devices.
                 </p>
 
-                <p>HTML, CSS, SASS, Styled Component, NextJS, React, React Native</p>
+                <p>JavaScript, React, React Native, NextJS, CMS</p>
               </motion.div>
             </StackCard>
 
-            <StackCard style={{ opacity:card_opacity, y:card_y2 }}>
+            <StackCard style={{ opacity:card_opacity, y:card_y3 }}>
               <span><HiCommandLine /></span>
 
               <h3>Back End</h3>
@@ -82,19 +94,7 @@ export default function MyStackSection() {
                   I work on the server-side parts of a website or app, handling the logics, databases, and overall functionality that power the front-end.
                 </p>
 
-                <p>PHP, NodeJS, WordPress, Firebase, AWS Cognito, DynamoDB, Amplify, S3, CloudFront, AppSync, Lambda, LightSail</p>
-              </motion.div>
-            </StackCard>
-
-            <StackCard style={{ opacity:card_opacity, y:card_y3 }}>
-              <span><HiChatBubbleLeftEllipsis /></span>
-
-              <h3>Consultation</h3>
-
-              <motion.div style={{ opacity:card_text_opacity }}>
-                <p>I help plan out the technology stack, identify potential issues, and offer appropriate solution for the given time and budget.</p>
-
-                <p>Amazon Web Services, Google Cloud Platform, Auth0, CloudFlare</p>
+                <p>PHP, NodeJS, AWS, API</p>
               </motion.div>
             </StackCard>
 
