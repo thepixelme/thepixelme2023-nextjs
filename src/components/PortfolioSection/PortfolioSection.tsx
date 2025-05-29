@@ -50,9 +50,9 @@ export default function PortfolioSection() {
 
         <Portfolio>
           <PortfolioItem style={{ y:card_y1 }}>
-            <h3>Zoom Clone</h3>
-            <p>Fully functional video conferencing web app, with secure real-time interactions, invitations, scheduling system, etc.</p>
-            <a href="https://zoom-clone-2-indol.vercel.app/">Link <span><HiArrowUpRight /></span></a>
+            <h3>AI Domain Generator</h3>
+            <p>Generate creative domain names and instantly verify their availability, powered by Google Gemini</p>
+            <a href="https://ai-domain-generator.thepixelme.com/">Link <span><HiArrowUpRight /></span></a>
           </PortfolioItem>
 
           <PortfolioItem style={{ y:card_y1 }}>
@@ -64,9 +64,9 @@ export default function PortfolioSection() {
           </PortfolioItem>
 
           <PortfolioItem style={{ y:card_y1 }}>
-            <h3>Degreed Blog</h3>
-            <p>Custom WordPress theme built from scratch for Degreed Blog.</p>
-            <a href="https://blog.degreed.com/">Degreed Blog<span><HiArrowUpRight /></span></a>
+            <h3>Zoom Clone</h3>
+            <p>Fully functional video conferencing web app, with secure real-time interactions, invitations, scheduling system, etc.</p>
+            <a href="https://zoom-clone-2-indol.vercel.app/">Link <span><HiArrowUpRight /></span></a>
           </PortfolioItem>
 
           <PortfolioItem style={{ y:card_y1 }}>
