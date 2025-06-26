@@ -15,8 +15,8 @@ export default function Home({ toggleTheme, theme } : HomePageProps) {
   return (
     <>
       <Head>
-        <title>Nhat - Coder, Director, Entrepreneur | ThePixelMe.com</title>
-        <meta name="description" content="Nhat Nguyen - Coder, Director, Entrepreneur" />
+        <title>Nhat - Code meets Business | ThePixelMe.com</title>
+        <meta name="description" content="Nhat Nguyen - Code meets Business" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
